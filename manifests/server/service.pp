@@ -9,6 +9,6 @@ class hyperglass::server::service {
     source  => "puppet:///modules/${module_name}/hyperglass.service",
     enable  => true,
     active  => true,
-    require => File['/opt/hyperglass/hyperglass/static/images'],
+    require => File['/opt/hyperglass/hyperglass-server/hyperglass/static/images'],
   }
 }

@@ -51,11 +51,13 @@ class hyperglass::server (
     -> Class['hyperglass::server::install']
   }
 
+  include hyperglass::hyperglassdir
   contain hyperglass::server::install
   contain hyperglass::server::config
   contain hyperglass::server::service
 
-  Class['hyperglass::server::install']
+  Class['hyperglass::hyperglassdir']
+  -> Class['hyperglass::server::install']
   -> Class['hyperglass::server::config']
   ~> Class['hyperglass::server::service']
 }
